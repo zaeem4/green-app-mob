@@ -23,10 +23,10 @@ class Posts {
 
 class AllPosts {
   int id;
-  int userId;
+  String userId;
   String flowerType;
   String discription;
-  int quantity;
+  String quantity;
   String city;
   String createdAt;
   String updatedAt;
@@ -127,11 +127,12 @@ class User {
 
 class NurseryDetail {
   int id;
-  int userId;
+  String userId;
   String location;
   String phoneNumber;
   String createdAt;
   String updatedAt;
+  String city;
 
   NurseryDetail(
       {this.id,
@@ -139,7 +140,8 @@ class NurseryDetail {
       this.location,
       this.phoneNumber,
       this.createdAt,
-      this.updatedAt});
+      this.updatedAt,
+      this.city});
 
   NurseryDetail.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -148,6 +150,7 @@ class NurseryDetail {
     phoneNumber = json['phone_number'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
+    city = json['city'];
   }
 
   Map<String, dynamic> toJson() {
@@ -158,6 +161,7 @@ class NurseryDetail {
     data['phone_number'] = this.phoneNumber;
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
+    data['city'] = this.city;
     return data;
   }
 }

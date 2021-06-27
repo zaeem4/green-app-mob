@@ -72,7 +72,7 @@ class Nurseries {
 
 class NurseryDetail {
   int id;
-  int userId;
+  String userId;
   String location;
   String phoneNumber;
   String createdAt;
