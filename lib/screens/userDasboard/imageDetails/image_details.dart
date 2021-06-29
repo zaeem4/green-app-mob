@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
+import 'package:green_app/screens/userDasboard/imageDetails/nurseryLocator/FlowerNurseryList.dart';
 import 'package:green_app/services/api/flower.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
@@ -53,44 +54,53 @@ class _ImageDetailsState extends State<ImageDetails> {
                 )
               : Row(),
           SizedBox(height: kDefaultPadding),
-          Row(
-            children: <Widget>[
-              SizedBox(
-                width: size.width / 2,
-                height: 84,
-                // ignore: deprecated_member_use
-                child: FlatButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
+          _isFile == true
+              ? Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: size.width / 2,
+                      height: 84,
+                      // ignore: deprecated_member_use
+                      child: FlatButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                          ),
+                        ),
+                        color: kPrimaryColor,
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FlowerNurseryList(
+                                        flowerType: imageType,
+                                      )));
+                        },
+                        child: Text(
+                          "Search Nurseries",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                  color: kPrimaryColor,
-                  onPressed: () {},
-                  child: Text(
-                    "Search Nurseries",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-              Expanded(
-                // ignore: deprecated_member_use
-                child: FlatButton(
-                  onPressed: () {},
-                  child: Text(
-                    "More Details",
-                    style: TextStyle(
-                      color: kPrimaryColor,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+                    // Expanded(
+                    // ignore: deprecated_member_use
+                    //   child: FlatButton(
+                    //     onPressed: () {},
+                    //     child: Text(
+                    //       "More Details",
+                    //       style: TextStyle(
+                    //         color: kPrimaryColor,
+                    //         fontSize: 16,
+                    //       ),
+                    //     ),
+                    //   ),
+                    // ),
+                  ],
+                )
+              : Row(),
         ],
       ),
     );
@@ -123,15 +133,15 @@ class _ImageDetailsState extends State<ImageDetails> {
           });
         } catch (e) {
           showAlertDialog(context, "Error", e.toString());
-          Navigator.pushNamed(context, "/user-home");
+          // Navigator.pushNamed(context, "/user-home");
         }
       } else {
         showAlertDialog(context, "Connection Failed", "Try again");
-        Navigator.pushNamed(context, "/user-home");
+        // Navigator.pushNamed(context, "/user-home");
       }
     } catch (e) {
       showAlertDialog(context, "Connection Failed", e.toString());
-      Navigator.pushNamed(context, "/user-home");
+      // Navigator.pushNamed(context, "/user-home");
     }
   }
 }

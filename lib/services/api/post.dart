@@ -7,7 +7,7 @@ class PostsDetails {
   Future<Posts> getAllPosts(type) async {
     var url = Uri.parse(server + "/api/posts");
     final response = await http.post(url, body: {
-      'flowerType': type,
+      'flowerType': type.toString(),
     });
     if (response.statusCode == 200) {
       return Posts.fromJson(json.decode(response.body));

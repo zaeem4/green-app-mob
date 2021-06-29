@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:green_app/constants.dart';
-// import 'package:green_app/screens/userDasboard/imageDetails/icon_card.dart';
+import 'package:green_app/screens/userDasboard/imageDetails/icon_card.dart';
 import 'package:green_app/screens/userDasboard/nearsetNursery/nursery_card.dart';
 import 'package:green_app/services/api/nursery.dart';
 import 'package:geolocator/geolocator.dart';
@@ -47,19 +47,22 @@ class _NurseryListState extends State<NurseryList> {
   getAllNurseries(String city) async {
     try {
       var allNurseries = await nurseries.getAllNurseries(city);
-      setState(() {
-        _isNursery = true;
-        nurseryDetails = allNurseries.nurseries;
-      });
-    } catch (e) {
-      if (e.toString() == "Exception: no") {
+      if (allNurseries.nurseries.length == 0) {
         setState(() {
           message = "No Nearest Nursery based on your location";
           _isNursery = true;
         });
       } else {
-        Navigator.pushNamed(context, "/user-home");
+        setState(() {
+          nurseryDetails = allNurseries.nurseries;
+          _isNursery = true;
+        });
       }
+    } catch (e) {
+      setState(() {
+        _isNursery = true;
+      });
+      showAlertDialog(context, "Error ", e.toString());
     }
   }
 

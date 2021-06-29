@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:green_app/constants.dart';
 import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
-import 'package:green_app/screens/userDasboard/user_dashboard.dart';
+// import 'package:green_app/screens/userDasboard/user_dashboard.dart';
 import 'package:green_app/services/api/auth.dart';
+import 'package:green_app/storage.dart';
 import 'components/bg_image.dart';
 import 'components/custome_text_field.dart';
 
@@ -142,8 +144,14 @@ class _LoginState extends State<LoginPage> {
       try {
         var response = await registration.login(email, password);
         if (response.user.type == "user") {
-          Navigator.pushNamed(context, "/user-home");
-        } else {
+          Storage.prefs.setBool("loggedIn", true);
+          Storage.prefs.setString("token", response.token);
+          Storage.prefs.setString("type", response.user.type);
+          Navigator.pushReplacementNamed(context, "/user-home");
+        } else if (response.user.type == "nursery") {
+          Storage.prefs.setBool("loggedIn", true);
+          Storage.prefs.setString("token", response.token);
+          Storage.prefs.setString("type", response.user.type);
           // Navigator.pushReplacement(context,
           //     MaterialPageRoute(builder: (context) => NurseryDashboard()));
         }
@@ -158,7 +166,6 @@ class _LoginState extends State<LoginPage> {
           _loading = false;
         });
         showAlertDialog(context, "Login Failed", msg);
-        Navigator.pushNamed(context, "/user-home");
       }
     } else {
       setState(() {

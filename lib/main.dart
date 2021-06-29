@@ -3,6 +3,7 @@ import 'package:green_app/constants.dart';
 import 'package:green_app/screens/authentication/choose_auth.dart';
 import 'package:green_app/screens/authentication/login_page.dart';
 import 'package:green_app/screens/authentication/registration_page.dart';
+import 'package:green_app/screens/userDasboard/imageDetails/nurseryLocator/FlowerNurseryList.dart';
 import 'package:green_app/screens/userDasboard/menu/settings/components/picture_requirements.dart';
 import 'package:green_app/screens/userDasboard/menu/settings/components/privacy_policy.dart';
 import 'package:green_app/screens/userDasboard/menu/settings/components/tips_tricks.dart';
@@ -50,7 +51,11 @@ class MyApp extends StatelessWidget {
       //   return null;
       // },
       routes: {
-        "/": (context) => LoginPage(),
+        "/": (context) => Storage.prefs.getBool("loggedIn") == true
+            ? Storage.prefs.getString("type") == "user"
+                ? UserDashboard()
+                : UserDashboard()
+            : LoginPage(),
         "/login": (context) => LoginPage(),
         "/registration": (context) => RegisterPage(),
         "/select-category": (context) => SelectAuthCategory(),

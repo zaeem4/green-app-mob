@@ -14,5 +14,5 @@ const COLOR_DARK_BLUE = Color.fromRGBO(20, 25, 45, 1.0);
 
 const FLOWERTYPES = ["Rose", "Sun Flower", "Tulip", "Dendelion", "Daisy"];
 
-const server = "https://7e01cf94a47a.ngrok.io/green-app/public";
+const server = "https://mano-web.com/app/public";
 const modelPath = "https://0f81564d3381.ngrok.io/mob/image";
