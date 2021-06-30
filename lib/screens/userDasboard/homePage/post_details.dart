@@ -71,7 +71,7 @@ class PostDetails extends StatelessWidget {
                         children: [
                           BorderIcon(
                             child: Text(
-                              "20 Hours ago",
+                              postData.time,
                               //style: themeData.textTheme.headline5,
                             ),
                             padding: const EdgeInsets.symmetric(
@@ -84,7 +84,7 @@ class PostDetails extends StatelessWidget {
                     Padding(
                       padding: sidePadding,
                       child: Text(
-                        "Rose Information",
+                        postData.flowerType.toUpperCase(),
                         //style: themeData.textTheme.headline4,
                       ),
                     ),
@@ -94,6 +94,17 @@ class PostDetails extends StatelessWidget {
                       child: Text(
                         postData.discription, textAlign: TextAlign.justify,
                         //style: themeData.textTheme.bodyText2,
+                      ),
+                    ),
+                    addVerticalSpace(padding),
+                    Padding(
+                      padding: sidePadding,
+                      child: Text(
+                        "By: " +
+                            postData.user.name +
+                            ", " +
+                            postData.user.nurseryDetail.city,
+                        //style: themeData.textTheme.headline4,
                       ),
                     ),
                     addVerticalSpace(100),
@@ -107,16 +118,17 @@ class PostDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     OptionButton(
-                      text: "Message",
+                      text: "Whatsapp",
                       icon: Icons.message,
-                      width: size.width * 0.38,
+                      width: size.width * 0.5,
+                      postData: postData,
                     ),
-                    addHorizontalSpace(10),
-                    OptionButton(
-                      text: "Call",
-                      icon: Icons.call,
-                      width: size.width * 0.35,
-                    ),
+                    // addHorizontalSpace(10),
+                    // OptionButton(
+                    //   text: "Call",
+                    //   icon: Icons.call,
+                    //   width: size.width * 0.35,
+                    // ),
                   ],
                 ),
               )

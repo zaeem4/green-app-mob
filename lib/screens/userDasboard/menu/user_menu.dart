@@ -19,7 +19,7 @@ class _UserMenuState extends State<UserMenu> {
       ),
       body: Drawer(
         child: ListView(
-          padding: EdgeInsets.zero,
+          padding: EdgeInsets.only(left: 10, right: 10),
           children: <Widget>[
             //UsNavBg(),
             DrawerHeader(

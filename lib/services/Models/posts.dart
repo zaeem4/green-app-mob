@@ -31,6 +31,7 @@ class AllPosts {
   String createdAt;
   String updatedAt;
   String image;
+  String time;
   User user;
 
   AllPosts(
@@ -43,6 +44,7 @@ class AllPosts {
       this.createdAt,
       this.updatedAt,
       this.image,
+      this.time,
       this.user});
 
   AllPosts.fromJson(Map<String, dynamic> json) {
@@ -55,6 +57,7 @@ class AllPosts {
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
     image = json['image'];
+    time = json['time'];
     user = json['user'] != null ? new User.fromJson(json['user']) : null;
   }
 
@@ -69,6 +72,7 @@ class AllPosts {
     data['created_at'] = this.createdAt;
     data['updated_at'] = this.updatedAt;
     data['image'] = this.image;
+    data['time'] = this.time;
     if (this.user != null) {
       data['user'] = this.user.toJson();
     }
