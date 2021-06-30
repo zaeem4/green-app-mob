@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
-import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
+//import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
 import 'package:green_app/services/api/auth.dart';
 import 'components/bg_image.dart';
 import 'components/custome_text_field.dart';
@@ -152,7 +152,7 @@ class _RegisterState extends State<RegisterPage> {
                                             _login,
                                           ),
                                           height: 50,
-                                          width:
+                                           width:
                                               MediaQuery.of(context).size.width,
                                         )
                                       : Container(
@@ -199,7 +199,7 @@ class _RegisterState extends State<RegisterPage> {
           _loading = false;
           _register = true;
         });
-        showAlertDialog(context, "Congratulation for joining", msg);
+      //  showAlertDialog(context, "Congratulation for joining", msg);
       } catch (error) {
         setState(() {
           msg = error.toString();
@@ -210,7 +210,7 @@ class _RegisterState extends State<RegisterPage> {
           msg = msg.replaceAll(":", "");
           _loading = false;
         });
-        showAlertDialog(context, "Registration Failed", msg);
+       // showAlertDialog(context, "Registration Failed", msg);
       }
     } else {
       setState(() {

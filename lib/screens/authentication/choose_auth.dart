@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
+import 'package:green_app/screens/NursuryDashboard/DashboardSecreen.dart';
 import 'package:green_app/screens/authentication/registration_page.dart';
 
 import 'components/bg_image.dart';
@@ -52,9 +53,15 @@ class _SelectAuthCategoryState extends State<SelectAuthCategory> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
+                                      builder: (context) => DashboardSecreen(
+                                        //type: "nursery",
+                                      )));
+                             /* Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
                                       builder: (context) => RegisterPage(
                                             type: "nursery",
-                                          )));
+                                          )));*/
                             },
                           ),
                         ),

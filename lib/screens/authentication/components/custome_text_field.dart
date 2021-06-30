@@ -7,7 +7,7 @@ class CustomTextField extends StatelessWidget {
       this.hint,
       this.obsecure = false,
       this.validator,
-      this.onSaved});
+      this.onSaved,  obscure});
   final FormFieldSetter<String> onSaved;
   final Icon icon;
   final String hint;

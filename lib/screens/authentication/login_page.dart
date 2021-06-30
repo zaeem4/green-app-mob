@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
-import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
+//import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
 import 'package:green_app/screens/userDasboard/user_dashboard.dart';
 import 'package:green_app/services/api/auth.dart';
 import 'components/bg_image.dart';
@@ -157,7 +157,7 @@ class _LoginState extends State<LoginPage> {
           msg = msg.replaceAll(":", "");
           _loading = false;
         });
-        showAlertDialog(context, "Login Failed", msg);
+     //   showAlertDialog(context, "Login Failed", msg);
         Navigator.pushNamed(context, "/user-home");
       }
     } else {
