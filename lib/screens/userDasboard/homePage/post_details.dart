@@ -70,12 +70,21 @@ class PostDetails extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           BorderIcon(
+
                             child: Text(
-                              "20 Hours ago",
-                              //style: themeData.textTheme.headline5,
+                              postData.user.name,
+                               //style: themeData.textTheme.headline5,
                             ),
                             padding: const EdgeInsets.symmetric(
-                                vertical: 15, horizontal: 15),
+                                vertical: 5, horizontal: 5),
+                          ),
+                          BorderIcon(
+                            child: Text(
+                              "20 Hours ago",
+                             // style: themeData.textTheme.headline5,
+                            ),
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 5, horizontal: 5),
                           )
                         ],
                       ),
@@ -83,16 +92,37 @@ class PostDetails extends StatelessWidget {
                     addVerticalSpace(padding),
                     Padding(
                       padding: sidePadding,
-                      child: Text(
-                        "Rose Information",
-                        //style: themeData.textTheme.headline4,
+                      child: Row(
+                        children: [
+                          Text(
+                          postData.flowerType,
+                           style: TextStyle(
+                             color: Colors.white,
+                             fontWeight: FontWeight.bold,
+                             fontSize: 24,
+                           )
+                          ),
+                          SizedBox(width: 8,),
+                          Text(
+                              'Information:',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              )
+                          ),
+                        ],
                       ),
                     ),
                     addVerticalSpace(padding),
                     Padding(
-                      padding: sidePadding,
+                      padding: EdgeInsets.only(left:50,right: 40),
                       child: Text(
                         postData.discription, textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
                         //style: themeData.textTheme.bodyText2,
                       ),
                     ),
@@ -107,16 +137,12 @@ class PostDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     OptionButton(
-                      text: "Message",
+                      text: "WhatsApp",
                       icon: Icons.message,
-                      width: size.width * 0.38,
+                      width: size.width * 0.45,
                     ),
                     addHorizontalSpace(10),
-                    OptionButton(
-                      text: "Call",
-                      icon: Icons.call,
-                      width: size.width * 0.35,
-                    ),
+
                   ],
                 ),
               )

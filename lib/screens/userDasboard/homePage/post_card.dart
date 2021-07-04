@@ -32,8 +32,11 @@ class PostCard extends StatelessWidget {
             // Stack(
             // children: [
             ClipRRect(
-                // borderRadius: BorderRadius.circular(30.0),
-                child: Image.network(server + postDetails.image)),
+
+                borderRadius: BorderRadius.circular(30.0),
+                child: Image.network(server + postDetails.image)
+
+            ),
             // Positioned(
             //     top: 15,
             //     right: 15,

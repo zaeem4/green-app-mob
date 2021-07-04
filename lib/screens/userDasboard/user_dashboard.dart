@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:green_app/screens/authentication/components/bg_image.dart';
+import 'package:green_app/screens/userDasboard/homePage/mainScreen.dart';
 import 'package:green_app/screens/userDasboard/homePage/post.dart';
 import 'package:green_app/screens/userDasboard/nearsetNursery/nursery_list.dart';
 import 'imageDetails/image_details.dart';
@@ -46,27 +47,7 @@ class _UserDashboardState extends State<UserDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Padding(
-            padding: const EdgeInsets.only(right: 12.0),
-            child: new IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {
-                Navigator.pushNamed(context, "/user-menu");
-              },
-            )),
-        title: Text('Green Pakistan'),
-        // actions: [
-        //   Icon(Icons.favorite),
-        //   Padding(
-        //     padding: EdgeInsets.symmetric(horizontal: 16),
-        //     child: new IconButton(
-        //       icon: Icon(Icons.search),
-        //       onPressed: () {},
-        //     ),
-        //   ),
-        // ],
-      ),
+
       body: _widgets[index],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.green[100],
@@ -91,7 +72,7 @@ screen1() {
   return Scaffold(
       body: Stack(fit: StackFit.expand, children: <Widget>[
     BgImage(),
-    Post(),
+    HomePageScreen(),
   ]));
 }
 
