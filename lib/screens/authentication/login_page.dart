@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:green_app/constants.dart';
-import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
+import 'package:green_app/screens/nursuryDashboard/nursery_dashboard.dart';
+import 'package:green_app/screens/userDasboard/imageDetails/icon_card.dart';
 // import 'package:green_app/screens/userDasboard/user_dashboard.dart';
 import 'package:green_app/services/api/auth.dart';
 import 'package:green_app/storage.dart';
@@ -152,8 +153,8 @@ class _LoginState extends State<LoginPage> {
           Storage.prefs.setBool("loggedIn", true);
           Storage.prefs.setString("token", response.token);
           Storage.prefs.setString("type", response.user.type);
-          // Navigator.pushReplacement(context,
-          //     MaterialPageRoute(builder: (context) => NurseryDashboard()));
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => NurseryDashboard()));
         }
       } catch (error) {
         setState(() {

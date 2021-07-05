@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
-// import 'package:green_app/screens/userDasboard/homePage/border_icon.dart';
 import 'package:green_app/screens/userDasboard/homePage/name_nursery_quantity.dart';
 import 'package:green_app/screens/userDasboard/homePage/post_details.dart';
 
@@ -11,8 +10,6 @@ class PostCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: unused_local_variable
-    // final ThemeData themeData = Theme.of(context);
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(MaterialPageRoute(
@@ -27,7 +24,7 @@ class PostCard extends StatelessWidget {
         ),
         margin: const EdgeInsets.symmetric(vertical: 10),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Stack(
             // children: [

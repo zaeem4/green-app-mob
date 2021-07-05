@@ -44,7 +44,7 @@ class _PostState extends State<Post> {
       }
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -82,32 +82,33 @@ class _PostState extends State<Post> {
                             height: 25,
                             color: kPrimaryColor,
                           )),
-                      Expanded(
-                        child: Padding(
-                          padding: sidePadding,
-                          child: new ListView.builder(
-                              physics: BouncingScrollPhysics(),
-                              itemCount: postDetails.length,
-                              itemBuilder: (context, index) {
-                                return PostCard(
-                                  postDetails: postDetails[index],
-                                );
-                              }),
-                        ),
-                      ),
+                      postDetails.length > 0
+                          ? Expanded(
+                              child: Padding(
+                                padding: sidePadding,
+                                child: new ListView.builder(
+                                    physics: BouncingScrollPhysics(),
+                                    itemCount: postDetails.length,
+                                    itemBuilder: (context, index) {
+                                      return PostCard(
+                                        postDetails: postDetails[index],
+                                      );
+                                    }),
+                              ),
+                            )
+                          : Container(
+                              padding: EdgeInsets.only(
+                                  left: 40, right: 25, top: 15, bottom: 20),
+                              child: Text(
+                                message.toUpperCase(),
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  color: kPrimaryColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
                     ],
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(
-                        left: 40, right: 25, top: 15, bottom: 20),
-                    child: Text(
-                      message.toUpperCase(),
-                      style: TextStyle(
-                        fontSize: 17,
-                        color: kPrimaryColor,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
                   ),
                 ],
               )

@@ -70,6 +70,18 @@ class _NurseryListState extends State<NurseryList> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        leading: Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: new IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Navigator.pushNamed(context, "/user-menu");
+              },
+            )),
+        title: Text('Green Pakistan'),
+      
+      ),
       backgroundColor: Colors.transparent.withOpacity(0.2),
       body: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
@@ -77,7 +89,7 @@ class _NurseryListState extends State<NurseryList> {
             // color: Colors.transparent,
             alignment: Alignment.center,
             width: size.width,
-            height: size.height,
+            // height: size.height,
             child: _isNursery == true
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

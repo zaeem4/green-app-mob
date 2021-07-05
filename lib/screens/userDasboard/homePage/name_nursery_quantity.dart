@@ -15,7 +15,7 @@ class NameNurseryQuantity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-          horizontal: kDefaultPadding * 1.5, vertical: kDefaultPadding * .3),
+          horizontal: kDefaultPadding - 2, vertical: kDefaultPadding * .3),
       child: Row(
         children: <Widget>[
           RichText(
@@ -42,7 +42,7 @@ class NameNurseryQuantity extends StatelessWidget {
           ),
           Spacer(),
           Text(
-            "Quantity: $quantity\n",
+            "Available: $quantity qty \n",
             style: Theme.of(context)
                 .textTheme
                 .headline6

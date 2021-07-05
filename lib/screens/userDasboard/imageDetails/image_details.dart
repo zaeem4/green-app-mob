@@ -35,73 +35,86 @@ class _ImageDetailsState extends State<ImageDetails> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          _isFile == true
-              ? ImageAndIcons(
-                  size: size,
-                  file: imagePath,
-                  flowerDetails: details,
-                )
-              : CircularProgressIndicator(
-                  valueColor: new AlwaysStoppedAnimation<Color>(kPrimaryColor),
-                ),
-          _isFile == true
-              ? TitleAndPrice(
-                  title: imageType,
-                  // address: "Flower name",
-                )
-              : Row(),
-          SizedBox(height: kDefaultPadding),
-          _isFile == true
-              ? Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: size.width / 2,
-                      height: 84,
-                      // ignore: deprecated_member_use
-                      child: FlatButton(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(20),
+    return Scaffold(
+      appBar: AppBar(
+        leading: Padding(
+            padding: const EdgeInsets.only(right: 12.0),
+            child: new IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                Navigator.pushNamed(context, "/user-menu");
+              },
+            )),
+        title: Text('Green Pakistan'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            _isFile == true
+                ? ImageAndIcons(
+                    size: size,
+                    file: imagePath,
+                    flowerDetails: details,
+                  )
+                : CircularProgressIndicator(
+                    valueColor:
+                        new AlwaysStoppedAnimation<Color>(kPrimaryColor),
+                  ),
+            _isFile == true
+                ? TitleAndPrice(
+                    title: imageType,
+                  )
+                : Row(),
+            SizedBox(height: kDefaultPadding),
+            _isFile == true
+                ? Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: size.width / 2,
+                        height: 84,
+                        // ignore: deprecated_member_use
+                        child: FlatButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topRight: Radius.circular(20),
+                            ),
                           ),
-                        ),
-                        color: kPrimaryColor,
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FlowerNurseryList(
-                                        flowerType: imageType,
-                                      )));
-                        },
-                        child: Text(
-                          "Search Nurseries",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
+                          color: kPrimaryColor,
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => FlowerNurseryList(
+                                          flowerType: imageType,
+                                        )));
+                          },
+                          child: Text(
+                            "Search Nurseries",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    // Expanded(
-                    // ignore: deprecated_member_use
-                    //   child: FlatButton(
-                    //     onPressed: () {},
-                    //     child: Text(
-                    //       "More Details",
-                    //       style: TextStyle(
-                    //         color: kPrimaryColor,
-                    //         fontSize: 16,
-                    //       ),
-                    //     ),
-                    //   ),
-                    // ),
-                  ],
-                )
-              : Row(),
-        ],
+                      // Expanded(
+                      // ignore: deprecated_member_use
+                      //   child: FlatButton(
+                      //     onPressed: () {},
+                      //     child: Text(
+                      //       "More Details",
+                      //       style: TextStyle(
+                      //         color: kPrimaryColor,
+                      //         fontSize: 16,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
+                    ],
+                  )
+                : Row(),
+          ],
+        ),
       ),
     );
   }
@@ -133,15 +146,12 @@ class _ImageDetailsState extends State<ImageDetails> {
           });
         } catch (e) {
           showAlertDialog(context, "Error", e.toString());
-          // Navigator.pushNamed(context, "/user-home");
         }
       } else {
         showAlertDialog(context, "Connection Failed", "Try again");
-        // Navigator.pushNamed(context, "/user-home");
       }
     } catch (e) {
       showAlertDialog(context, "Connection Failed", e.toString());
-      // Navigator.pushNamed(context, "/user-home");
     }
   }
 }

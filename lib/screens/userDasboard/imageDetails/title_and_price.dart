@@ -28,25 +28,25 @@ class TitleAndPrice extends StatelessWidget {
                       .headline4
                       .copyWith(color: kTextColor, fontWeight: FontWeight.bold),
                 ),
-                TextSpan(
-                  text: address,
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: kPrimaryColor,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
+                // TextSpan(
+                //   text: address,
+                //   style: TextStyle(
+                //     fontSize: 20,
+                //     color: kPrimaryColor,
+                //     fontWeight: FontWeight.w300,
+                //   ),
+                // ),
               ],
             ),
           ),
           Spacer(),
-          Text(
-            price.toString(),
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                .copyWith(color: kPrimaryColor),
-          )
+          // Text(
+          //   price.toString(),
+          //   style: Theme.of(context)
+          //       .textTheme
+          //       .headline5
+          //       .copyWith(color: kPrimaryColor),
+          // )
         ],
       ),
     );

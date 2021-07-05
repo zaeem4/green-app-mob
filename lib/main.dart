@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
+import 'package:green_app/screens/NursuryDashboard/nursery_dashboard.dart';
 import 'package:green_app/screens/authentication/choose_auth.dart';
 import 'package:green_app/screens/authentication/login_page.dart';
 import 'package:green_app/screens/authentication/registration_page.dart';
-import 'package:green_app/screens/userDasboard/imageDetails/nurseryLocator/FlowerNurseryList.dart';
+import 'package:green_app/screens/nursuryDashboard/addPost/addPost.dart';
+import 'package:green_app/screens/nursuryDashboard/settings/SettingSecreen.dart';
+import 'package:green_app/screens/nursuryDashboard/settings/components/EditProfile.dart';
+import 'package:green_app/screens/nursuryDashboard/store/StoreScreen.dart';
 import 'package:green_app/screens/userDasboard/menu/settings/components/picture_requirements.dart';
 import 'package:green_app/screens/userDasboard/menu/settings/components/privacy_policy.dart';
 import 'package:green_app/screens/userDasboard/menu/settings/components/tips_tricks.dart';
@@ -54,7 +58,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => Storage.prefs.getBool("loggedIn") == true
             ? Storage.prefs.getString("type") == "user"
                 ? UserDashboard()
-                : UserDashboard()
+                : NurseryDashboard()
             : LoginPage(),
         "/login": (context) => LoginPage(),
         "/registration": (context) => RegisterPage(),
@@ -67,6 +71,10 @@ class MyApp extends StatelessWidget {
         "/tips-and-tricks": (context) => TipsAndTricks(),
         "/picture-requirements": (context) => PictureRequirements(),
         "/nearest-nurseries": (context) => NurseryList(),
+        "/add-post": (context) => AddPost(),
+        "/nursery-settings": (context) => SellerSettings(),
+        "/nursery-profile": (context) => NurseryProfile(),
+        "/nursery-store": (context) => StoreScreen(),
       },
     );
   }

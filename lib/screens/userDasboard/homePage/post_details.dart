@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
 import 'package:green_app/screens/userDasboard/homePage/border_icon.dart';
 import 'package:green_app/screens/userDasboard/homePage/option_button.dart';
-import 'package:green_app/screens/userDasboard/menu/user_menu.dart';
 
 class PostDetails extends StatelessWidget {
   final dynamic postData;
@@ -23,8 +22,7 @@ class PostDetails extends StatelessWidget {
               child: new IconButton(
                 icon: Icon(Icons.menu),
                 onPressed: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => UserMenu()));
+                  Navigator.pushNamed(context, "/user-menu");
                 },
               )),
           title: Text('Green Pakistan'),
@@ -49,7 +47,7 @@ class PostDetails extends StatelessWidget {
               SingleChildScrollView(
                 physics: BouncingScrollPhysics(),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Stack(
                       children: [

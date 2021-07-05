@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
-import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
+import 'package:green_app/screens/userDasboard/imageDetails/icon_card.dart';
+// import 'package:green_app/screens/nurseryDashboard/details/components/icon_card.dart';
 import 'package:green_app/services/api/auth.dart';
 import 'components/bg_image.dart';
 import 'components/custome_text_field.dart';
@@ -89,7 +90,7 @@ class _RegisterState extends State<RegisterPage> {
                             Padding(
                                 padding: EdgeInsets.only(bottom: 20, top: 60),
                                 child: CustomTextField(
-                                  icon: Icon(Icons.email),
+                                  icon: Icon(Icons.account_circle),
                                   onSaved: (input) => name = input,
                                   validator: (input) =>
                                       input.isEmpty ? "*Required" : null,
