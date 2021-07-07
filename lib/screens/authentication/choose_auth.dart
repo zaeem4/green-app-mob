@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
 import 'package:green_app/screens/authentication/registration_page.dart';
+import 'package:green_app/screens/userDasboard/user_dashboard.dart';
 
 import 'components/bg_image.dart';
 
