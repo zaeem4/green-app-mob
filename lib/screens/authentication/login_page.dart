@@ -78,39 +78,42 @@ class _LoginState extends State<LoginPage> {
                             SizedBox(
                               height: 20,
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 20,
-                                  right: 20,
-                                  bottom:
-                                      MediaQuery.of(context).viewInsets.bottom),
-                              child: _loading == true
-                                  ? CircularProgressIndicator(
-                                      valueColor:
-                                          new AlwaysStoppedAnimation<Color>(
-                                              kPrimaryColor),
-                                    )
-                                  : Container(
-                                      child: filledButton(
-                                          "Login",
-                                          kTextColor,
-                                          kPrimaryColor,
-                                          kPrimaryColor,
-                                          Colors.white,
-                                          _validateLoginInput),
-                                      height: 50,
-                                      width: MediaQuery.of(context).size.width,
-                                    ),
-                            ),
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    //  left: 20,
+                                  //    right: 20,
+                                      bottom:
+                                          MediaQuery.of(context).viewInsets.bottom),
+                                  child: _loading == true
+                                      ? CircularProgressIndicator(
+                                          valueColor:
+                                              new AlwaysStoppedAnimation<Color>(
+                                                  kPrimaryColor),
+                                        )
+                                      : Container(
+                                          child: filledButton(
+                                              "Login",
+                                              kTextColor,
+                                              kPrimaryColor,
+                                              kPrimaryColor,
+                                              Colors.white,
+                                              _validateLoginInput),
+                                          height: 50,
+                                      //    width: MediaQuery.of(context).size.width,
+                                        ),
+                                ),
                             SizedBox(
-                              height: 20,
+                            //  height: 20,
                             ),
                             Padding(
                               padding: EdgeInsets.only(
-                                  left: 20,
-                                  right: 20,
-                                  bottom:
-                                      MediaQuery.of(context).viewInsets.bottom),
+                                 // left: 20,
+                               //   right: 20,
+                               //   bottom:
+                             //         MediaQuery.of(context).viewInsets.bottom
+                             ),
                               child: Container(
                                 child: filledButton(
                                     "Create Account",
@@ -120,8 +123,11 @@ class _LoginState extends State<LoginPage> {
                                     Colors.white,
                                     _register),
                                 height: 50,
-                                width: MediaQuery.of(context).size.width,
+                                //width: MediaQuery.of(context).size.width,
                               ),
+                            ),
+                            
+                              ],
                             ),
                           ],
                         ),
@@ -182,22 +188,28 @@ class _LoginState extends State<LoginPage> {
   Widget filledButton(String text, Color splashColor, Color highlightColor,
       Color fillColor, Color textColor, void function()) {
     // ignore: deprecated_member_use
-    return RaisedButton(
-      highlightElevation: 0.0,
-      splashColor: splashColor,
-      highlightColor: highlightColor,
-      elevation: 0.0,
-      color: fillColor,
-      shape:
-          RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-      child: Text(
-        text,
-        style: TextStyle(
-            fontWeight: FontWeight.bold, color: textColor, fontSize: 20),
+    return Padding(
+      padding: const EdgeInsets.only(right:30.0,left: 30),
+      child: SizedBox(
+        child: RaisedButton(
+          highlightElevation: 0.0,
+          splashColor: splashColor,
+          highlightColor: highlightColor,
+          elevation: 0.0,
+          color: fillColor,
+          shape:
+              
+              RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+          child: Text(
+            text,
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: textColor, fontSize: 22),
+          ),
+          onPressed: () {
+            function();
+          },
+        ),
       ),
-      onPressed: () {
-        function();
-      },
     );
   }
 
@@ -217,31 +229,42 @@ class _LoginState extends State<LoginPage> {
       padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.15),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 220,
+        height: 280,
         child: Stack(
           children: <Widget>[
             Positioned(
                 child: Container(
               child: Align(
                 child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: kPrimaryColor),
+                 // decoration: BoxDecoration(
+                   //   shape: BoxShape.circle, color: kPrimaryColor),
                   width: 150,
                   height: 150,
+                  decoration: BoxDecoration(
+                                  borderRadius: (BorderRadius.circular(25)),
+                                  color: Colors.blueGrey[300],
+                  image: DecorationImage(
+                                 fit: BoxFit.cover,
+                                image: AssetImage(
+                                   "assets/images/iconpic.png"
+                                    ),
+                              ))
                 ),
               ),
               height: 154,
             )),
             Positioned(
+              top:100,
+              right: 110,
               child: Container(
                   height: 150,
                   child: Align(
                     child: Text(
-                      "Welcome",
+                      "GREEN APP",
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: kPrimaryColor,
                       ),
                     ),
                   )),
@@ -252,8 +275,8 @@ class _LoginState extends State<LoginPage> {
               bottom: MediaQuery.of(context).size.height * 0.046,
               right: MediaQuery.of(context).size.width * 0.22,
               child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
+               // decoration:
+                    //BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
               ),
             ),
             Positioned(
@@ -262,8 +285,8 @@ class _LoginState extends State<LoginPage> {
               bottom: 0,
               right: MediaQuery.of(context).size.width * 0.32,
               child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
+               // decoration:
+                //    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
               ),
             ),
           ],

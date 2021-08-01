@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_app/constants.dart';
+import 'package:green_app/screens/NursuryDashboard/nursery_dashboard.dart';
 import 'package:green_app/screens/authentication/registration_page.dart';
 import 'package:green_app/screens/userDasboard/user_dashboard.dart';
 
@@ -50,12 +51,16 @@ class _SelectAuthCategoryState extends State<SelectAuthCategory> {
                                   size: 80,
                                 )),
                             onTap: () {
-                              Navigator.pushReplacement(
+                              // Navigator.pushReplacement(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (context) => RegisterPage(
+                              //               type: "nursery",
+                              //             )));
+                                Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => RegisterPage(
-                                            type: "nursery",
-                                          )));
+                                      builder: (context) => NurseryDashboard()));
                             },
                           ),
                         ),
@@ -64,7 +69,7 @@ class _SelectAuthCategoryState extends State<SelectAuthCategory> {
                       Text(
                         "NURSURY",
                         style: TextStyle(
-                            color: Colors.white60,
+                            color: Colors.black54,
                             fontSize: 30,
                             fontFamily: "Montserat",
                             fontWeight: FontWeight.bold),
@@ -100,7 +105,7 @@ class _SelectAuthCategoryState extends State<SelectAuthCategory> {
                       Text(
                         "USER",
                         style: TextStyle(
-                            color: Colors.white60,
+                            color: Colors.black54,
                             fontSize: 30,
                             fontFamily: "Montserat",
                             fontWeight: FontWeight.bold),

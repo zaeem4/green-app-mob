@@ -94,7 +94,7 @@ class _RegisterState extends State<RegisterPage> {
                                   onSaved: (input) => name = input,
                                   validator: (input) =>
                                       input.isEmpty ? "*Required" : null,
-                                  hint: "Name",
+                                  hint: "NAME",
                                 )),
                             Padding(
                                 padding: EdgeInsets.only(bottom: 20),
@@ -115,6 +115,7 @@ class _RegisterState extends State<RegisterPage> {
                                   validator: (input) =>
                                       input.isEmpty ? "*Required" : null,
                                   hint: "PASSWORD",
+                                  
                                 )),
                             Padding(
                                 padding: EdgeInsets.only(bottom: 20),
@@ -227,22 +228,28 @@ class _RegisterState extends State<RegisterPage> {
   Widget filledButton(String text, Color splashColor, Color highlightColor,
       Color fillColor, Color textColor, void function()) {
     // ignore: deprecated_member_use
-    return RaisedButton(
-      highlightElevation: 0.0,
-      splashColor: splashColor,
-      highlightColor: highlightColor,
-      elevation: 0.0,
-      color: fillColor,
-      shape:
-          RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-      child: Text(
-        text,
-        style: TextStyle(
-            fontWeight: FontWeight.bold, color: textColor, fontSize: 20),
+    return Padding(
+      padding: const EdgeInsets.only(right:60.0,left: 60),
+      child: SizedBox(
+        child: RaisedButton(
+          highlightElevation: 0.0,
+          splashColor: splashColor,
+          highlightColor: highlightColor,
+          elevation: 0.0,
+          color: fillColor,
+          shape:
+              
+              RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10.0)),
+          child: Text(
+            text,
+            style: TextStyle(
+                fontWeight: FontWeight.bold, color: textColor, fontSize: 22),
+          ),
+          onPressed: () {
+            function();
+          },
+        ),
       ),
-      onPressed: () {
-        function();
-      },
     );
   }
 
@@ -269,36 +276,47 @@ class _RegisterState extends State<RegisterPage> {
                 child: Container(
               child: Align(
                 child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: kPrimaryColor),
+                 // decoration: BoxDecoration(
+                   //   shape: BoxShape.circle, color: kPrimaryColor),
                   width: 150,
                   height: 150,
+                  decoration: BoxDecoration(
+                                  borderRadius: (BorderRadius.circular(25)),
+                                  color: Colors.blueGrey[300],
+                  image: DecorationImage(
+                                 fit: BoxFit.cover,
+                                image: AssetImage(
+                                   "assets/images/iconpic.png"
+                                    ),
+                              ))
                 ),
               ),
-              height: 154,
+              height: 160,
             )),
             Positioned(
+              top:120,
+              right: 110,
               child: Container(
                   height: 150,
                   child: Align(
                     child: Text(
-                      "Welcome",
+                      "GREEN APP",
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: kPrimaryColor,
                       ),
                     ),
                   )),
             ),
             Positioned(
               width: MediaQuery.of(context).size.width * 0.15,
-              height: MediaQuery.of(context).size.width * 0.15,
+              height: MediaQuery.of(context).size.width * 0.1,
               bottom: MediaQuery.of(context).size.height * 0.046,
               right: MediaQuery.of(context).size.width * 0.22,
               child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
+               // decoration:
+                    //BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
               ),
             ),
             Positioned(
@@ -307,8 +325,8 @@ class _RegisterState extends State<RegisterPage> {
               bottom: 0,
               right: MediaQuery.of(context).size.width * 0.32,
               child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
+               // decoration:
+                //    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
               ),
             ),
           ],
