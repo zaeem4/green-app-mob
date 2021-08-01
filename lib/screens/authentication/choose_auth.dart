@@ -24,14 +24,14 @@ class _SelectAuthCategoryState extends State<SelectAuthCategory> {
                 Form(
                     key: _formKey,
                     child: Column(children: <Widget>[
-                      Text(
-                        "Want to register as ",
-                        style: TextStyle(
-                            color: kPrimaryColor,
-                            fontSize: 40,
-                            fontFamily: "Montserat",
-                            fontWeight: FontWeight.bold),
-                      ),
+                      // Text(
+                      //   "Want to register as ",
+                      //   style: TextStyle(
+                      //       color: kPrimaryColor,
+                      //       fontSize: 40,
+                      //       fontFamily: "Montserat",
+                      //       fontWeight: FontWeight.bold),
+                      // ),
                       SizedBox(
                         height: 40,
                       ),

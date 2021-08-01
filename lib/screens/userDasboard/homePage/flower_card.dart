@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:green_app/constants.dart';
-import 'package:green_app/screens/userDasboard/homePage/recomended_flower_details.dart';
 
 class FlowerCard extends StatelessWidget {
   final dynamic postDetails;
@@ -9,24 +7,157 @@ class FlowerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => RecomendedFlowerDetails(
-                  postData: postDetails,
-                )));
-      },
-      child: Container(
-        // decoration: BoxDecoration(
-        //   color: kPrimaryColor,
-        //   borderRadius: BorderRadius.circular(30.0),
-        // ),
-        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-        child: Column(
-          children: [
-            ClipRRect(child: Image.network(postDetails.image)),
-          ],
-        ),
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                postDetails.flowerType.toUpperCase(),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: size.width * 0.052),
+              ),
+              //SizedBox(height: 10),
+              Text(
+                'Recommended',
+                style: TextStyle(
+                    fontSize: size.width * 0.045, color: Colors.black38),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 10, left: 20),
+            child: Container(
+              width: size.width * 0.75,
+              height: size.height * 0.4,
+              decoration: BoxDecoration(
+                  border: Border.all(
+                      width: 0,
+                      color: Theme.of(context).scaffoldBackgroundColor),
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                      postDetails.image,
+                    ),
+                  )),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, right: 30),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Soil Type :  ',
+                  style: TextStyle(
+                      fontSize: size.width * 0.045,
+                      fontWeight: FontWeight.bold),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          postDetails.soil,
+                          style: TextStyle(
+                            fontSize: size.width * 0.045,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, right: 30),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Sunlight :   ',
+                  style: TextStyle(
+                      fontSize: size.width * 0.045,
+                      fontWeight: FontWeight.bold),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        Text(postDetails.sunlight,
+                            style: TextStyle(
+                              fontSize: size.width * 0.045,
+                            ),
+                            textAlign: TextAlign.justify),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, right: 30),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Season :     ',
+                  style: TextStyle(
+                      fontSize: size.width * 0.045,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text(postDetails.plantationTime,
+                    style: TextStyle(
+                      fontSize: size.width * 0.045,
+                    ),
+                    textAlign: TextAlign.justify),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0, right: 30),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Watering :  ',
+                  style: TextStyle(
+                      fontSize: size.width * 0.045,
+                      fontWeight: FontWeight.bold),
+                ),
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(postDetails.water,
+                            style: TextStyle(
+                              fontSize: size.width * 0.045,
+                            ),
+                            textAlign: TextAlign.justify),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(
+            thickness: 2,
+          ),
+        ],
       ),
     );
   }

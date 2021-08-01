@@ -87,7 +87,7 @@ class RecomendPlantCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "$flowerType\n",
+                          text: "Flower Name : $flowerType\n",
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class RecomendPlantCard extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: "$quantity",
+                          text: "Quantity: $quantity",
                           style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.bold,

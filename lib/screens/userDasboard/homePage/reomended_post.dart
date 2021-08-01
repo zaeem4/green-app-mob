@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:green_app/constants.dart';
-import 'package:green_app/screens/userDasboard/homePage/chose_option.dart';
 import 'package:green_app/screens/userDasboard/homePage/flower_card.dart';
 import 'package:green_app/screens/userDasboard/imageDetails/icon_card.dart';
 import 'package:green_app/services/api/flower.dart';

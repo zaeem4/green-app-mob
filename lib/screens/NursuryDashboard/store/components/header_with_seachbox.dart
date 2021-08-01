@@ -42,7 +42,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                 //   ),
                 // ),
                 Text(
-                  'Welcome to $name Garden',
+                  'Welcome $name ',
                   style: Theme.of(context).textTheme.headline6.copyWith(
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),

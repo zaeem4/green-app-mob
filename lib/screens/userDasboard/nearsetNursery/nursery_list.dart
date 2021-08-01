@@ -39,6 +39,7 @@ class _NurseryListState extends State<NurseryList> {
     Placemark place = placemarks[0];
     setState(() {
       currentAddress = place.locality;
+      print(currentAddress);
       getAllNurseries(currentAddress.toLowerCase());
     });
     // print('center $place');
@@ -80,7 +81,6 @@ class _NurseryListState extends State<NurseryList> {
               },
             )),
         title: Text('Green Pakistan'),
-      
       ),
       backgroundColor: Colors.transparent.withOpacity(0.2),
       body: SingleChildScrollView(

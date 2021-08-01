@@ -54,41 +54,8 @@ class _RegisterState extends State<RegisterPage> {
                         key: _formKey,
                         child: Column(
                           children: <Widget>[
-                            // Container(
-                            //   width: MediaQuery.of(context).size.width,
-                            //   height: 140,
-                            //   child: Stack(
-                            //     children: <Widget>[
-                            //       Positioned(
-                            //         child: Align(
-                            //           child: Container(
-                            //             width: 130,
-                            //             height: 130,
-                            //             decoration: BoxDecoration(
-                            //                 shape: BoxShape.circle,
-                            //                 color: kPrimaryColor),
-                            //           ),
-                            //           alignment: Alignment.center,
-                            //         ),
-                            //       ),
-                            //       Positioned(
-                            //         child: Container(
-                            //           child: Text(
-                            //             "Welcome",
-                            //             style: TextStyle(
-                            //               fontSize: 48,
-                            //               fontWeight: FontWeight.bold,
-                            //               color: Colors.white,
-                            //             ),
-                            //           ),
-                            //           alignment: Alignment.center,
-                            //         ),
-                            //       ),
-                            //     ],
-                            //   ),
-                            // ),
                             Padding(
-                                padding: EdgeInsets.only(bottom: 20, top: 60),
+                                padding: EdgeInsets.only(bottom: 20),
                                 child: CustomTextField(
                                   icon: Icon(Icons.account_circle),
                                   onSaved: (input) => name = input,
@@ -125,7 +92,7 @@ class _RegisterState extends State<RegisterPage> {
                                       passwordConfirmation = input,
                                   validator: (input) =>
                                       input.isEmpty ? "*Required" : null,
-                                  hint: "PASSWORD CONFIRM",
+                                  hint: "CONFIRM PASSWORD",
                                 )),
                             SizedBox(
                               height: 20,
@@ -153,8 +120,10 @@ class _RegisterState extends State<RegisterPage> {
                                             _login,
                                           ),
                                           height: 50,
-                                          width:
-                                              MediaQuery.of(context).size.width,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              2,
                                         )
                                       : Container(
                                           child: filledButton(
@@ -165,8 +134,10 @@ class _RegisterState extends State<RegisterPage> {
                                               Colors.white,
                                               _validateRegisterInput),
                                           height: 50,
-                                          width:
-                                              MediaQuery.of(context).size.width,
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              2,
                                         ),
                             ),
                             SizedBox(
@@ -269,15 +240,21 @@ class _RegisterState extends State<RegisterPage> {
                 child: Container(
               child: Align(
                 child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: kPrimaryColor),
-                  width: 150,
-                  height: 150,
-                ),
+                    width: MediaQuery.of(context).size.width / 2,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        borderRadius: (BorderRadius.circular(25)),
+                        color: Colors.transparent,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/iconpic.png"),
+                        ))),
               ),
               height: 154,
             )),
             Positioned(
+              top: 100,
+              width: MediaQuery.of(context).size.width - 20,
               child: Container(
                   height: 150,
                   child: Align(
@@ -286,7 +263,7 @@ class _RegisterState extends State<RegisterPage> {
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: kPrimaryColor,
                       ),
                     ),
                   )),
@@ -296,20 +273,14 @@ class _RegisterState extends State<RegisterPage> {
               height: MediaQuery.of(context).size.width * 0.15,
               bottom: MediaQuery.of(context).size.height * 0.046,
               right: MediaQuery.of(context).size.width * 0.22,
-              child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
-              ),
+              child: Container(),
             ),
             Positioned(
               width: MediaQuery.of(context).size.width * 0.08,
               height: MediaQuery.of(context).size.width * 0.08,
               bottom: 0,
               right: MediaQuery.of(context).size.width * 0.32,
-              child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
-              ),
+              child: Container(),
             ),
           ],
         ),

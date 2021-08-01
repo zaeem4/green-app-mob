@@ -3,7 +3,6 @@ import 'package:flutter/rendering.dart';
 import 'package:green_app/constants.dart';
 import 'package:green_app/screens/nursuryDashboard/nursery_dashboard.dart';
 import 'package:green_app/screens/userDasboard/imageDetails/icon_card.dart';
-// import 'package:green_app/screens/userDasboard/user_dashboard.dart';
 import 'package:green_app/services/api/auth.dart';
 import 'package:green_app/storage.dart';
 import 'components/bg_image.dart';
@@ -99,7 +98,8 @@ class _LoginState extends State<LoginPage> {
                                           Colors.white,
                                           _validateLoginInput),
                                       height: 50,
-                                      width: MediaQuery.of(context).size.width,
+                                      width:
+                                          MediaQuery.of(context).size.width / 2,
                                     ),
                             ),
                             SizedBox(
@@ -120,7 +120,7 @@ class _LoginState extends State<LoginPage> {
                                     Colors.white,
                                     _register),
                                 height: 50,
-                                width: MediaQuery.of(context).size.width,
+                                width: MediaQuery.of(context).size.width / 2,
                               ),
                             ),
                           ],
@@ -217,31 +217,37 @@ class _LoginState extends State<LoginPage> {
       padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.15),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 220,
+        height: 240,
         child: Stack(
           children: <Widget>[
             Positioned(
                 child: Container(
               child: Align(
                 child: Container(
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: kPrimaryColor),
-                  width: 150,
-                  height: 150,
-                ),
+                    width: MediaQuery.of(context).size.width / 2,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        borderRadius: (BorderRadius.circular(25)),
+                        color: Colors.transparent,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage("assets/images/iconpic.png"),
+                        ))),
               ),
               height: 154,
             )),
             Positioned(
+              top: 100,
+              width: MediaQuery.of(context).size.width - 20,
               child: Container(
                   height: 150,
                   child: Align(
                     child: Text(
-                      "Welcome",
+                      "GREEN APP",
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: kPrimaryColor,
                       ),
                     ),
                   )),
@@ -251,20 +257,14 @@ class _LoginState extends State<LoginPage> {
               height: MediaQuery.of(context).size.width * 0.15,
               bottom: MediaQuery.of(context).size.height * 0.046,
               right: MediaQuery.of(context).size.width * 0.22,
-              child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
-              ),
+              child: Container(),
             ),
             Positioned(
               width: MediaQuery.of(context).size.width * 0.08,
               height: MediaQuery.of(context).size.width * 0.08,
               bottom: 0,
               right: MediaQuery.of(context).size.width * 0.32,
-              child: Container(
-                decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: kPrimaryColor),
-              ),
+              child: Container(),
             ),
           ],
         ),
