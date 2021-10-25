@@ -179,7 +179,7 @@ class _PostCardState extends State<PostCard> {
                           ),
                           //SizedBox(height: 10),
                           Text(
-                            'Nursury',
+                            'Nursery',
                             style: TextStyle(
                                 fontSize: size.width * 0.048,
                                 color: Colors.black38),
@@ -187,34 +187,33 @@ class _PostCardState extends State<PostCard> {
                         ],
                       ),
                       Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5, bottom: 10),
-                        child: Container(
-                          height: 30,
-                          width: 128,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Colors.grey[300],
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.location_city,
-                                    size: 18,
-                                    color: Colors.grey,
-                                  )),
-                              Text(
-                                widget.postDetails.user.nurseryDetail.city,
-                                style: TextStyle(
-                                  fontSize: size.width * 0.038,
-                                ),
+                      Container(
+                        height: 40,
+                        width: size.width / 2.2,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.grey[300],
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.location_city,
+                                  size: 20,
+                                  color: Colors.grey,
+                                )),
+                            Text(
+                              widget.postDetails.user.nurseryDetail.city
+                                  .toUpperCase(),
+                              style: TextStyle(
+                                fontSize: 10,
                               ),
-                              SizedBox(width: 5),
-                            ],
-                          ),
+                              textAlign: TextAlign.right,
+                            ),
+                            // SizedBox(width: 5),
+                          ],
                         ),
                       ),
                     ]),
@@ -225,26 +224,16 @@ class _PostCardState extends State<PostCard> {
                     ),
                     child: Text(
                       widget.postDetails.discription,
-                      style: TextStyle(fontSize: size.width * 0.055),
+                      style: TextStyle(fontSize: size.width * 0.055),textAlign: TextAlign.justify,
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 20, left: 20),
+                    padding: const EdgeInsets.only(top: 8.0),
                     child: Column(
                       children: [
                         Container(
-                          width: size.width * 0.75,
-                          height: size.height * 0.3,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                width: 0,
-                                color:
-                                    Theme.of(context).scaffoldBackgroundColor),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child:
-                              Image.network(server + widget.postDetails.image),
-                        ),
+                            child: Image.network(
+                                server + widget.postDetails.image)),
                         SizedBox(
                           height: 20,
                         ),

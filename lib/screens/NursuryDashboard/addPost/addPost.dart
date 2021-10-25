@@ -161,18 +161,18 @@ class _AddPostState extends State<AddPost> {
                 children: List.generate(images.length, (index) {
                   Asset asset = images[index];
                   return Padding(
-                    padding: const EdgeInsets.only(left: 30.0, top: 30),
+                    padding: const EdgeInsets.only(left: 25.0, top: 30),
                     child: AssetThumb(
                       asset: asset,
-                      width: 300,
-                      height: 300,
+                      width: 1000,
+                      height: 1000,
                     ),
                   );
                 }),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
+              padding: const EdgeInsets.only(bottom: 50.0),
               child: RaisedButton(
                 child: Text("Pick images"),
                 onPressed: pickImages,

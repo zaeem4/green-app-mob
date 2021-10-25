@@ -30,6 +30,7 @@ class _BodyState extends State<Body> {
         _isDetails = true;
       });
     } catch (e) {
+      print("k");
       setState(() {
         _isDetails = true;
       });
@@ -46,7 +47,7 @@ class _BodyState extends State<Body> {
               children: <Widget>[
                 HeaderWithSearchBox(size: size, name: nurseryDetails.name),
                 SizedBox(height: kDefaultPadding),
-                TitleWithMoreBtn(title: "All Flowers", press: () {}),
+                TitleWithMoreBtn(title: "Flower Posted By You", press: () {}),
                 RecomendsPlants(
                   postsData: nurseryDetails.post,
                 ),

@@ -15,6 +15,6 @@ const COLOR_DARK_BLUE = Color.fromRGBO(20, 25, 45, 1.0);
 const FLOWERTYPES = ["Rose", "Sun Flower", "Tulip", "Dendelion", "Daisy"];
 
 const server = "https://app.devora.ma";
-const modelPath = "https://36986f77159d.ngrok.io/mob/image";
+const modelPath = "https://30bac681c04f.ngrok.io/mob/image";
 
 const DASHBAORDNAME = "Green App";

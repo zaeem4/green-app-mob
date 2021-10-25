@@ -27,7 +27,6 @@ class NurseryDetails {
       'Authorization': 'Bearer $token',
     }, body: {});
     if (response.statusCode == 200) {
-      print(json.decode(response.body));
       return NurseryStore.fromJson(json.decode(response.body));
     } else if (response.statusCode == 404) {
       throw Exception(json.decode(response.body));

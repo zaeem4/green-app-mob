@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:green_app/constants.dart';
 import 'package:green_app/screens/authentication/registration_page.dart';
 
 import 'components/bg_image.dart';
@@ -61,7 +60,7 @@ class _SelectAuthCategoryState extends State<SelectAuthCategory> {
                       ),
                       SizedBox(height: 5),
                       Text(
-                        "NURSURY",
+                        "NURSERY",
                         style: TextStyle(
                             color: Colors.white60,
                             fontSize: 30,

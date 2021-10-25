@@ -32,14 +32,14 @@ class _HomePageState extends State<HomePage> {
                 },
               )),
           title: Text(
-            'Green Pakistan',
+            'Green App',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           bottom: TabBar(
             tabs: [
               Tab(
                 child: Text(
-                  'Nursury Posts',
+                  'Posts',
                   style: TextStyle(
                     fontSize: 15,
                   ),
@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Tab(
                 child: Text(
-                  'Recomended Flowers',
+                  'Recommended Flowers',
                   style: TextStyle(
                     fontSize: 14,
                   ),

@@ -17,7 +17,7 @@ class RecomendsPlants extends StatelessWidget {
               return RecomendPlantCard(
                 image: postsData[index].image,
                 flowerType: postsData[index].flowerType,
-                quantity: postsData[index].quantity,
+                discription: postsData[index].discription,
               );
             }),
         // RecomendPlantCard(
@@ -44,10 +44,10 @@ class RecomendPlantCard extends StatelessWidget {
     Key key,
     this.image,
     this.flowerType,
-    this.quantity,
+    this.discription,
   }) : super(key: key);
 
-  final String image, flowerType, quantity;
+  final String image, flowerType, discription;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class RecomendPlantCard extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: "Flower Name : $flowerType\n",
+                          text: "$flowerType\n",
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class RecomendPlantCard extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: "Quantity: $quantity",
+                          text: "$discription",
                           style: TextStyle(
                             color: kPrimaryColor,
                             fontWeight: FontWeight.bold,

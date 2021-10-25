@@ -18,11 +18,11 @@ class HeaderWithSearchBox extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(
-              left: kDefaultPadding * 3,
-              right: kDefaultPadding,
-              bottom: kDefaultPadding - 20,
+              left: size.width / 4,
+              bottom: size.height / 100,
             ),
-            height: size.height * 0.2 - 90,
+            height: size.height / 10,
+            width: size.width,
             decoration: BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(

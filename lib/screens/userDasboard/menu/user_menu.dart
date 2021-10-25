@@ -32,11 +32,11 @@ class _UserMenuState extends State<UserMenu> {
               //       fontSize: 30),
               // ),
               decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: Colors.transparent,
                   image: DecorationImage(
-                    fit: BoxFit.fill,
+                    fit: BoxFit.fitHeight,
                     image: AssetImage(
-                      'assets/images/bottom_img_1.png',
+                      'assets/images/iconpic.png',
                     ),
                   )),
               child: null,
